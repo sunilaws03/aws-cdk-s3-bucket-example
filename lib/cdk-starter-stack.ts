@@ -38,6 +38,12 @@ export class CdkStarterStack extends cdk.Stack {
       ],
     });
 
+    // ✅ Add tags to the S3 bucket
+    cdk.Tags.of(s3Bucket).add('Name', 'sunilaws-cdk');
+    cdk.Tags.of(s3Bucket).add('Environment', 'dev');
+    cdk.Tags.of(s3Bucket).add('Owner', 'Sunil');
+    cdk.Tags.of(s3Bucket).add('Project', 'aws-cdk-s3-example');
+
     s3Bucket.grantRead(new iam.AccountRootPrincipal());
   }
 }
