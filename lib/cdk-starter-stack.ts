@@ -7,7 +7,7 @@ export class CdkStarterStack extends cdk.Stack {
     super(scope, id, props);
 
     const s3Bucket = new s3.Bucket(this, 's3-bucket', {
-      // bucketName: 'my-bucket',
+      bucketName: 'sunilaws-cdk',
       removalPolicy: cdk.RemovalPolicy.DESTROY,
       autoDeleteObjects: true,
       versioned: false,
